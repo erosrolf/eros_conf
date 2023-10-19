@@ -1,11 +1,9 @@
 return {
   {
     "iamcco/markdown-preview.nvim",
-    ft = "markdown",
-    -- build = "cd app && yarn install",
-    -- build = ":call mkdp#util#install()",
-    run = ":call mkdp#util#install()",
-  },
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
 }
 
   -- You can also add new plugins here as well:
